@@ -48,7 +48,7 @@ app.post('/api/users/sync', async (req, res) => {
         dailyTargetMl,
         gamification,
       },
-      { new: true, upsert: true }
+      { returnDocument: 'after', upsert: true }
     );
 
     console.log(`[SYNC] User profile synced for device: ${deviceId}`);
